@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bertinelli — The Geometry of Silence</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <div id="preloader">
+        <div style="display:flex; justify-content:space-between; font-size:8px; letter-spacing:0.5em; color:#333;"><span>BERTINELLI</span><span>FLORENCE</span></div>
+        <div style="text-align:center; font-family:var(--font-serif); font-size:1.2rem; letter-spacing:0.5em;">THE SILENCE OF FORM</div>
+        <div style="text-align:right; font-size:4rem; color:var(--accent-gold); opacity:0.1; font-family: monospace;" id="perc">0%</div>
+    </div>
+
+    <header>
+        <a href="#" class="logo" onclick="navTo('home')">
+           <div class="logo-wrapper-horizontal">
+            <img src="photo/logo-symbol.svg" alt="Bertinelli" class="logo-icon-horizontal">
+            <span class="logo-text-horizontal">BERTINELLI</span>
+        </div>
+        </a>
+        <nav>
+            <a href="#" onclick="navTo('home')" class="n-link active" id="l-home">Home</a>
+            <a href="#" onclick="navTo('collection')" class="n-link" id="l-collection">Archive</a>
+            <a href="#" onclick="navTo('story')" class="n-link" id="l-story">Heritage</a>
+            <a href="#" onclick="navTo('contact')" class="n-link" id="l-contact">Concierge</a>
+        </nav>
+        <i data-lucide="shopping-bag" style="width:16px; opacity: 0.6;"></i>
+    </header>
+
+    <div id="home" class="page active">
+        <section class="hero">
+            <video class="hero-video-bg" autoplay muted loop playsinline>
+                <source src="vid.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div>
+                <p style="color:var(--accent-gold); text-transform:uppercase; letter-spacing:0.6em; font-size:8px; margin-bottom:2rem; opacity: 0.6;">Formed by Centuries</p>
+                <h1 class="hero-title">The Geometry <br> <span>of Silence</span></h1>
+            </div>
+            <section class="marquee">
+    <div class="marquee-track">
+        <div class="marquee-content">
+            <span>BERTINELLI // FLORENCE // RARE FORMS // EBONEY // HERITAGE</span>
+            <span>BERTINELLI // FLORENCE // RARE FORMS // EBONEY // HERITAGE</span>
+        </div>
+    </div>
+</section>
+        </section>
+
+        <div class="scroll-indicator">
+    <span>Scroll to explore</span>
+</div>
+        <section class="history-block">
+    <div class="bg-animate"></div> <div class="content-wrapper">
+        <h3 class="history-title">THE WEIGHT OF HISTORY</h3>
+        <p class="history-quote">«Каждая трещина в дереве — это код, который мы расшифровываем с помощью резца. 150 лет тишины, воплощенные в геометрии.»</p>
+    </div>
+</section>
+        <section class="glance-grid">
+    <div class="g-item" style="background-image: url('photo/photo1.png');"></div>
+    <div class="g-item" style="background-image: url('photo/photo2.png');"></div>
+    <div class="g-item" style="background-image: url('photo/photo3.png');"></div>
+</section>
+        <section class="philosophy-intro">
+    <div class="ph-wrapper">
+        <p class="ph-label">Material Provenance</p>
+        <h2 class="ph-title">150 Years of History</h2>
+        <p class="ph-desc">Мы не создаем украшения. Мы раскрываем скрытую геометрию эбенового дерева, которое хранило тишину веками.</p>
+        <button class="btn" onclick="navTo('story')">Our Heritage</button>
+    </div>
+</section>
+    </div>
+
+    <div id="collection" class="page">
+        <div class="collection-container">
+            <div style="margin-bottom: 6rem; text-align: center;" class="reveal">
+                <p style="color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5em; font-size: 8px; margin-bottom: 1rem;">Series 2026</p>
+                <h2 style="font-size: 2.5rem; font-weight: 300;">The Collection</h2>
+            </div>
+            <div class="collection-nav">
+    <button class="c-link active">All Pieces</button>
+    <button class="c-link">Structural Cuffs</button>
+    <button class="c-link">Fragments</button>
+</div>
+            <div class="product-grid">
+                <div class="product-item reveal" onclick="openProduct('Cuff 01', '$2,850', 'Structural Cuffs', 'https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=800')">
+                    <div class="p-visual" style="background-image: url('https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=800');"></div>
+                    <div class="p-info">
+                        <div><h4 class="p-name">Cuff 01</h4><p class="p-desc">Structural Fragment</p></div>
+                        <span class="p-price">$2,850</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="product-modal" onclick="closeProduct(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal" onclick="closeProduct(event)">[ Close ]</button>
+            <div id="modal-img" style="height: 500px; background-size: cover; background-position: center; border-radius: 1.5rem;"></div>
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+                <p id="modal-tag" style="color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.4em; font-size: 8px; margin-bottom: 1rem;"></p>
+                <h2 id="modal-name" style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400; margin-bottom: 1.5rem;"></h2>
+                <p style="line-height: 1.8; color: #888; margin-bottom: 1rem; font-size: 0.85rem;">Aged Gabon Ebony. Hand-polished with organic beeswax. Cool to the touch, warming with your skin.</p>
+                <p style="line-height: 1.8; color: #555; margin-bottom: 2.5rem; font-size: 0.8rem; font-style: italic;">120 hours of human touch.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #222; padding-top: 2rem;">
+                    <span id="modal-price" style="font-family: monospace; font-size: 1.3rem;"></span>
+                    <button class="btn">Reserve this piece</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="story" class="page" style="padding: 150px 8% 80px;">
+    <div class="heritage-container">
+        <!-- Главный заголовок -->
+        <div class="heritage-header reveal">
+            <h2 class="heritage-title">The Heritage</h2>
+        </div>
+
+        <!-- Цитата - наш новый акцент -->
+        <div class="heritage-quote-block reveal">
+            <p class="main-quote">
+                «В мире, где всё стало быстрым, мы выбираем то, что требует времени. 
+                Дерево помнит солнце, которое светило столетие назад.»
+            </p>
+        </div>
+
+        <!-- Основной текст -->
+        <div class="heritage-content reveal">
+            <div class="heritage-text">
+                <p>Bertinelli — это не ювелирный бренд. Это ателье редких форм.</p>
+                <p>Мы работаем с деревом, которому более 150 лет. Каждая трещина в массиве — это код, который мы расшифровываем с помощью резца. Мы извлекаем из дерева его молчаливую историю, превращая её в осязаемую геометрию.</p>
+            </div>
+            <div class="heritage-signature">
+                <span>Florence, Italy</span>
+                <div class="signature-line"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="contact" class="page" style="padding: 150px 8% 80px;">
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <p style="color: var(--accent-gold); margin-bottom: 1rem;">THE CONCIERGE</p>
+            <h2 style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 2rem; font-weight: 400;">Private Inquiry</h2>
+            <p style="color: #666; margin-bottom: 4rem; line-height: 1.8;">Каждое изделие создается в ограниченном количестве. Обсудите индивидуальный заказ с нашим мастером.</p>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <input type="text" placeholder="Your Identity">
+                <input type="email" placeholder="Email Address">
+                <button class="btn" style="width: 100%; margin-top: 2rem;">Send Private Request</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>© 2026 BERTINELLI // ITALY</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
